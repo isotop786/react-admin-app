@@ -1,8 +1,9 @@
 import React from 'react';
+import Wrapper from './Wrapper';
 
 const Dashboard: React.FC = () => {
     return (
-        <>
+        <Wrapper>
         <h2>Section title</h2>
       <div className="table-responsive">
         <table className="table table-striped table-sm">
@@ -131,7 +132,7 @@ const Dashboard: React.FC = () => {
           </tbody>
         </table>
       </div>
-        </>
+        </Wrapper>
     )
 }
 

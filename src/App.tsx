@@ -5,28 +5,19 @@ import './App.css';
 import Dashboard from './secure/Dashboard';
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom"
 import Users from './secure/Users';
+import Login from './public/Login';
 
 function App() {
   return (
 <div className='App'>
-    <Nav/>
-<div className="container-fluid">
-  <div className="row">
-
-    {/* Menu */}
-    <Menu/>
-    {/* Menu Ends*/}      
-
-    <main role="main" className="col-md-9 ml-sm-auto col-lg-10 px-md-4 mt-4">
     {/* All Routes are here */}
       <Routes>
         <Route path="/" element={<Dashboard/>}  />
         <Route path="/users" element={<Users/>}  />
+        <Route path="/login" element={<Login/>}  />
       </Routes>
      {/* Routes ends here */}
-    </main>
-  </div>
-</div>
+
 </div>
   );
 }
