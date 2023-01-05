@@ -17,36 +17,17 @@ class Wrapper extends Component<PropsWithChildren> {
     }
 
     componentDidMount =  () => {
-        // try {
-        //     const response = await axios.get('user');
-        //     console.log(response)
-        // }
-        // catch (err)
+        axios.get('user')
+            .then(res => console.log(res))
+            .catch(err => {
+                this.setState({redirect: true})
+            })
+
+        // if (localStorage.getItem('token') === null)
         // {
-        //     this.setState({
-        //         redirect: true
-        //     })
+        //     this.setState({ redirect : true })   
+        //     // alert(this.state.redirect)
         // }
-        // axios.get('user')
-        //     .then(res => console.log(res))
-        //     .catch(err => {
-        //         this.setState({redirect: true})
-        //     })
-        console.log(localStorage.getItem('token'));
-        // if (localStorage.getItem('token') !==null)
-        // {
-        //     // this.state.redircet = false
-        //     this.setState({redirect:false})
-        // }
-        // else {
-        //     // this.setState({redirect: true})
-        //      this.setState({redirect:true})
-        // }
-        if (localStorage.getItem('token') === null)
-        {
-            this.setState({ redirect : true })   
-            // alert(this.state.redirect)
-        }
     }
 
     render() {
