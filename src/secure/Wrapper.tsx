@@ -18,7 +18,9 @@ class Wrapper extends Component<PropsWithChildren> {
 
     componentDidMount =  () => {
         axios.get('user')
-            .then(res => console.log(res))
+            .then(res => {
+                
+            })
             .catch(err => {
                 this.setState({redirect: true})
             })
