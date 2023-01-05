@@ -1,6 +1,10 @@
 import React,{useState} from 'react'
 import "./login.css"
 import { useForm } from "react-hook-form";
+import axios from 'axios';
+import { Link, redirect } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+
 
 const Register = () => {
     const [firstName, setFirstName] = useState(''); 
@@ -9,9 +13,24 @@ const Register = () => {
     const [password, setPassword] = useState(''); 
     const [passwordConfirm, setPasswordConfirm] = useState(''); 
 
+    const navigate = useNavigate();
+
     const onSubmitHandler = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        console.log(firstName,lastName,email,password,passwordConfirm);
+        console.log(firstName, lastName, email, password, passwordConfirm);
+        axios.post('https://django-admin-app.herokuapp.com/api/register', {
+            first_name: firstName,
+            last_name: lastName,
+            email: email,
+            password: password,
+            password_confirm: passwordConfirm,
+            role:1
+        })
+        .then(res => {
+            console.log(res.data)
+            return navigate("/login");
+        })
+        .catch(err => console.log(err.response.data))
     }
 
     return (
@@ -45,6 +64,7 @@ const Register = () => {
                             onChange={e => setPasswordConfirm(e.target.value)}
                         />
                     <button className="btn btn-lg btn-primary btn-block" type="submit">Register</button>
+                    <p className='mt-3 text-muted'>Already have account? <Link to="/login">Login</Link> now</p>    
                     <p className="mt-5 mb-3 text-muted">&copy; 2017-2022</p>
             </form>
         </div>

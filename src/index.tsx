@@ -6,30 +6,27 @@ import Dashboard from './secure/Dashboard';
 import Users from './secure/Users';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import axios from 'axios';
+import { Provider } from 'react-redux';
+import store from './redux/store'
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Dashboard/>,
-  },
-  {
-    path: "/users",
-    element: <Users/>,
-  },
-]);
+axios.defaults.baseURL = 'https://django-admin-app.herokuapp.com/api/';
+// axios.defaults.baseURL = 'http://localhost:8000/api/';
+axios.defaults.withCredentials = true;
+// axios.defaults.
+
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
+    <Provider store={store}>
     <BrowserRouter>
       <App/>
-    </BrowserRouter>
+      </BrowserRouter>
+      </Provider>
   </React.StrictMode>
 );
 
