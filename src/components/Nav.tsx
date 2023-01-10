@@ -11,6 +11,7 @@ class Nav extends Component {
 
     handleClick = () => {
         axios.post('logout', {});
+        localStorage.clear();
         this.setState({redirect: true})
     }
 

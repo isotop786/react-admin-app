@@ -37,8 +37,9 @@ class Wrapper extends Component<PropsWithChildren> {
           return (
         <>
             {this.state.redirect && (<Navigate to="/login"/>)}        
-                  
+        {/* Navbar  */}
             <Nav/>
+        {/* Navbar Ends  */}
             {/* {this.state.} */}
             <div className="container-fluid">
             <div className="row">

@@ -3,7 +3,7 @@ import Wrapper from '../Wrapper';
 
 const Dashboard: React.FC = () => {
     return (
-        <Wrapper>
+    <Wrapper>
         <h2>Section title</h2>
       <div className="table-responsive">
         <table className="table table-striped table-sm">

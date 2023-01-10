@@ -18,7 +18,7 @@ const Register = () => {
     const onSubmitHandler = (e : React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log(firstName, lastName, email, password, passwordConfirm);
-        axios.post('https://django-admin-app.herokuapp.com/api/register', {
+        axios.post('register', {
             first_name: firstName,
             last_name: lastName,
             email: email,
