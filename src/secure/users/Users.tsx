@@ -43,7 +43,7 @@ const Users: React.FC = () => {
             </tr>
           </thead>
         <tbody>
-        {users.map((user: User) => {
+        {users?.map((user: User) => {
             return( <tr key={user.id}>
             <td>{user.id}</td>
             <td>{user.first_name}</td>

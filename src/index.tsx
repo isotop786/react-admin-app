@@ -11,13 +11,16 @@ import { Provider } from 'react-redux';
 import store from './redux/store'
 
 axios.defaults.baseURL = '';
-// axios.defaults.baseURL = 'http://165.227.33.145:8000/api/';
+// axios.defaults.baseURL = 'http://165.227.33.145:7009/api/';
+// axios.defaults.baseURL = 'http://165.227.33.145/api/';
 // axios.defaults.baseURL = 'https://django-admin-app.herokuapp.com/api/';
 // axios.defaults.baseURL = 'http://localhost:8000/api/';
 axios.defaults.withCredentials = true;
 // axios.defaults.
 
 
+// "proxy":"http://165.227.33.145/api/",
+// "proxy":"https://django-admin-app.herokuapp.com/api/",
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,10 +28,10 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <BrowserRouter>
-      <App/>
+      <BrowserRouter>
+        <App />
       </BrowserRouter>
-      </Provider>
+    </Provider>
   </React.StrictMode>
 );
 
