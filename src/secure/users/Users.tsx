@@ -6,21 +6,25 @@ import { Role } from "../../models/Role";
 import { Link } from "react-router-dom";
 
 const Users: React.FC = () => {
-    const [users, setUsers] = useState([]);
+  const [users, setUsers] = useState([]);
+  const [page, setPage] = useState(1);
+  const [lastPage,setLastPage] = useState(1)
     useEffect(() => {
         const fetchUsers = () => {
-            axios.get('users?page=1')
+            axios.get(`users?page=${page}`)
                 .then(res => {
-                // console.log(res.data.data)
-                    setUsers(res.data.data)
+                console.log(res.data)
+                  setUsers(res.data.data)
+                  setLastPage(res.data.meta?.last_page)
                 })
                 .catch(err => console.log(err))
             console.log(users)
+            console.log(lastPage)
         }
 
         fetchUsers();
         
-    },[])
+    },[page])
     return (
         <Wrapper>
             <h2>All Users</h2>
@@ -58,7 +62,21 @@ const Users: React.FC = () => {
             
           </tbody>
         </table>
-      </div>
+        </div>
+        {lastPage > 0 && (
+          <nav >
+          <ul className="pagination">
+            <li className="page-item">
+              <a href="#" className="page-link">Previous</a>
+            </li>
+            <li className="page-item">
+              <a href="#" className="page-link" onClick={()=>setPage(page+1)}>Next</a>
+            </li>
+          </ul>
+        </nav>
+      )}
+        
+
         </Wrapper>
     )
 }
