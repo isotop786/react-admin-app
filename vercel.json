@@ -1,8 +1,8 @@
 {
   "rewrites": [
     {
-      "source": "/api",
-      "destination": "https://django-rest-admin-production.up.railway.app/"
+      "source": "/api/:path*",
+      "destination": "https://django-rest-admin-production.up.railway.app/:path*"
     }
   ]
 }
