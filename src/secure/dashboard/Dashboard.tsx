@@ -4,7 +4,8 @@ import Wrapper from '../Wrapper';
 const Dashboard: React.FC = () => {
     return (
     <Wrapper>
-        <h2>Section title</h2>
+      <h2>Section title</h2>
+
       <div className="table-responsive">
         <table className="table table-striped table-sm">
           <thead>
@@ -24,7 +25,7 @@ const Dashboard: React.FC = () => {
               <td>placeholder</td>
               <td>text</td>
             </tr>
-            
+
           </tbody>
         </table>
       </div>

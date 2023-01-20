@@ -24,7 +24,17 @@ const Users: React.FC = () => {
 
         fetchUsers();
         
-    },[page])
+    },[page,users])
+
+    const deletUserHandler = async (id: any)=>{
+      if(window.confirm('Are you sure to delete?'))
+      {
+        await axios.delete(`/users/${id}`)
+        const newUsers = users.filter((u: User) => u.id !== id)
+        setUsers(newUsers)
+      }
+    }
+
     return (
       <Wrapper>
       
@@ -59,7 +69,7 @@ const Users: React.FC = () => {
                     <td>{user.email}</td>
                     <td>{user.role?.name}</td>
                     <td><button className="btn btn-sm btn-warning">Update</button></td>
-                    <td><button className="btn btn-sm btn-danger">Delete</button></td>
+                    <td><button onClick={()=>deletUserHandler(user.id)} className="btn btn-sm btn-danger">Delete</button></td>
                   </tr>)
                 })}
            
