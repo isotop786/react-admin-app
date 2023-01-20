@@ -13,13 +13,13 @@ const Users: React.FC = () => {
         const fetchUsers = () => {
             axios.get(`users?page=${page}`)
                 .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                   setUsers(res.data.data)
                   setLastPage(res.data.meta?.last_page)
                 })
                 .catch(err => console.log(err))
-            console.log(users)
-            console.log(lastPage)
+            // console.log(users)
+            // console.log(lastPage)
         }
 
         fetchUsers();
