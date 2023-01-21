@@ -1,7 +1,7 @@
 import React,{useEffect}from 'react';
 import Wrapper from '../Wrapper';
 import axios from 'axios';
-
+import SaleLine from '../charts/SaleLine';
 const Dashboard: React.FC = () => {
 
   const [userCount,setUserCount] = React.useState(0)
@@ -24,7 +24,7 @@ const Dashboard: React.FC = () => {
     <Wrapper>
 
       <div className="">
-        <div className="row" style={{display:"flex", columnGap:"10px"}}>
+        <div className="row mb-2" style={{display:"flex", columnGap:"10px"}}>
           
             <div  
                style={{
@@ -103,6 +103,45 @@ const Dashboard: React.FC = () => {
           
           
         
+        </div>
+
+        <div className='row my-3 d-flex' >
+              <div  
+               style={{
+                display: "flex",
+                flexDirection:"column",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "solid 1px #ddd",
+                background:"#f9f9f9",
+                borderRadius: "10px",
+                zIndex:'11',
+                height:"400px",
+                width:"600px",
+                color:"#fff"
+              }}
+            >
+                <SaleLine/>
+          </div>
+              <div  
+               style={{
+                display: "flex",
+                flexDirection:"column",
+                alignItems: "center",
+                justifyContent: "center",
+                border: "solid 1px #ddd",
+                background:"#f9f9f9",
+                borderRadius: "10px",
+                zIndex:'11',
+                height:"400px",
+                width:"600px",
+                color:"#fff",
+                marginLeft:"20px"
+              }}
+            >
+                <SaleLine/>
+          </div>
+             
         </div>
       </div>
     </Wrapper>

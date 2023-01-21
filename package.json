@@ -12,8 +12,10 @@
     "@types/react-dom": "^18.0.10",
     "@types/react-router-dom": "^5.3.3",
     "axios": "^1.2.2",
+    "chart.js": "^4.2.0",
     "http-proxy-middleware": "^2.0.6",
     "react": "^18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.41.3",
     "react-redux": "^8.0.5",
@@ -30,7 +32,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy":"https://django-rest-admin-production.up.railway.app/",
+  "proxy": "https://django-rest-admin-production.up.railway.app/",
   "eslintConfig": {
     "extends": [
       "react-app",
