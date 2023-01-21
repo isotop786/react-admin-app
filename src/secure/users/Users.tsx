@@ -68,8 +68,10 @@ const Users: React.FC = () => {
                     <td>{user.last_name}</td>
                     <td>{user.email}</td>
                     <td>{user.role?.name}</td>
-                    <td><Link to={`/users/${user.id}/edit`} className="btn btn-sm btn-warning">Update</Link></td>
-                    <td><button onClick={()=>deletUserHandler(user.id)} className="btn btn-sm btn-danger">Delete</button></td>
+                    <td><Link  to={user.email !=="admin@admin.com" ? `/users/${user.id}/edit` : `#`} className="btn btn-sm btn-warning">
+                        Update
+                      </Link></td>
+                    <td><button disabled={user.email =="admin@admin.com"} onClick={()=>deletUserHandler(user.id)} className="btn btn-sm btn-danger">Delete</button></td>
                   </tr>)
                 })}
            

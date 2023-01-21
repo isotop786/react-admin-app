@@ -3,6 +3,7 @@ import Wrapper from '../Wrapper';
 import axios from 'axios';
 import SaleLine from '../charts/SaleLine';
 import ProductBar from '../charts/ProductBar';
+import "./dashstyle.css"
 const Dashboard: React.FC = () => {
 
   const [userCount,setUserCount] = React.useState(0)
@@ -34,13 +35,14 @@ const Dashboard: React.FC = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 border: "solid 1px #ddd",
-                background:"#2B4865",
+                background:"#a9a9a9",
                 borderRadius: "10px",
                 zIndex:'11',
                 width:"300px",
                 height:"180px",
                 color:"#fff"
               }}
+              className="textWhite"
             >
               <h3>Total Users</h3>
               <h2>{userCount?userCount:"..."}</h2>
@@ -94,8 +96,9 @@ const Dashboard: React.FC = () => {
                 zIndex:'11',
                 width:"300px",
                 height:"180px",
-                color:"#fff"
+                color:"#fff!important"
               }}
+              
             >
               <h3>Total Role</h3>
               <h2>{roleCount ? roleCount : "..."}</h2>
