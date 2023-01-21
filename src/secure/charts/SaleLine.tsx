@@ -29,7 +29,7 @@ import {
       },
       title: {
         display: true,
-        text: 'Montly Sale',
+        text: 'Sales',
       },
     },
   };
@@ -42,7 +42,7 @@ import {
     labels,
     datasets: [
       {
-        label: 'Dataset 1',
+        label: 'Amount',
         data: [234,342,334,234,453,233,234,342,334,234,453,233,239,500],
         borderColor: 'rgb(255, 99, 132)',
         backgroundColor: 'rgba(255, 99, 132, 0.5)',

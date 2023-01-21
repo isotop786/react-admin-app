@@ -2,6 +2,7 @@ import React,{useEffect}from 'react';
 import Wrapper from '../Wrapper';
 import axios from 'axios';
 import SaleLine from '../charts/SaleLine';
+import ProductBar from '../charts/ProductBar';
 const Dashboard: React.FC = () => {
 
   const [userCount,setUserCount] = React.useState(0)
@@ -139,7 +140,7 @@ const Dashboard: React.FC = () => {
                 marginLeft:"20px"
               }}
             >
-                <SaleLine/>
+                <ProductBar/>
           </div>
              
         </div>
