@@ -24,7 +24,7 @@ const Register = () => {
             email: email,
             password: password,
             password_confirm: passwordConfirm,
-            role:1
+            role:3
         })
         .then(res => {
             console.log(res.data)
