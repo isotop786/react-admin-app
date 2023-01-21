@@ -20,7 +20,7 @@ const Menu = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/users">
+            <Link className="nav-link" to="/roles">
               <span data-feather="file"></span>
               Roles
             </Link>
