@@ -20,6 +20,12 @@ const Menu = () => {
             </Link>
           </li>
           <li className="nav-item">
+            <Link className="nav-link" to="/users">
+              <span data-feather="file"></span>
+              Roles
+            </Link>
+          </li>
+          <li className="nav-item">
             <a className="nav-link" href="#">
               <span data-feather="file"></span>
               Orders
