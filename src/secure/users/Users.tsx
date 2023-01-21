@@ -13,9 +13,9 @@ const Users: React.FC = () => {
         const fetchUsers = () => {
             axios.get(`users?page=${page}`)
                 .then(res => {
-                // console.log(res.data)
-                  setUsers(res.data.data)
-                  setLastPage(res.data.meta?.last_page)
+                console.log(res.data)
+                  setUsers(res.data.results)
+                  // setLastPage(res.data.meta?.last_page)
                 })
                 .catch(err => console.log(err))
             // console.log(users)
@@ -68,7 +68,7 @@ const Users: React.FC = () => {
                     <td>{user.last_name}</td>
                     <td>{user.email}</td>
                     <td>{user.role?.name}</td>
-                    <td><button className="btn btn-sm btn-warning">Update</button></td>
+                    <td><Link to={`/users/${user.id}/edit`} className="btn btn-sm btn-warning">Update</Link></td>
                     <td><button onClick={()=>deletUserHandler(user.id)} className="btn btn-sm btn-danger">Delete</button></td>
                   </tr>)
                 })}
@@ -77,7 +77,7 @@ const Users: React.FC = () => {
               </tbody>
             </table>
           </div>
-        {lastPage > 0 && (
+        {/* {lastPage > 0 && (
           <nav >
           <ul className="pagination">
             <li className="page-item">
@@ -88,7 +88,7 @@ const Users: React.FC = () => {
             </li>
           </ul>
         </nav>
-      )}
+      )} */}
 
           </div>
         )}

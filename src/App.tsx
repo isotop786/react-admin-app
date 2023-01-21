@@ -4,11 +4,10 @@ import Menu from './components/Menu';
 import './App.css';
 import Dashboard from './secure/dashboard/Dashboard';
 import {BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import Users from './secure/users/Users';
 import Login from './public/Login';
 import Register from './public/Register';
 import RedirectToDashboard from './secure/RedirectToDashboard';
-import UserCreate from './secure/users/UserCreate';
+import { UserEdit,UserCreate, Users } from './secure/users';
 function App() {
   return (
 <div className='App'>
@@ -18,6 +17,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}  />
         <Route path="/users" element={<Users/>}  />
         <Route path="/users/create" element={<UserCreate/>}  />
+        <Route path="/users/:id/edit" element={<UserEdit/>}  />
         <Route path="/login" element={<Login/>}  />
         <Route path="/register" element={<Register/>}  />
       </Routes>
