@@ -6,8 +6,8 @@ import { useNavigate } from "react-router-dom";
 
 
 const Login = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('admin@admin.com');
+    const [password, setPassword] = useState('password');
 
     const navigate = useNavigate();
     const onSubmitHandler = (e: SyntheticEvent) => {
@@ -35,11 +35,15 @@ const Login = () => {
                 <form className="form-signin" onSubmit={e => onSubmitHandler(e)}>
                     <h1 className="h3 mb-3 font-weight-normal">Please sign in</h1>
                     <label htmlFor="inputEmail" className="sr-only">Email address</label>
-                        <input type="email" id="inputEmail" className="form-control" placeholder="Email address"
+                        <input 
+                            defaultValue="admin@admin.com"
+                            type="email" id="inputEmail" className="form-control" placeholder="Email address"
                             onChange={e => setEmail(e.target.value)}
                             required />
                     <label htmlFor="inputPassword" className="sr-only">Password</label>
-                        <input type="password" id="inputPassword" className="form-control" placeholder="Password"
+                        <input
+                            defaultValue="password"
+                            type="password" id="inputPassword" className="form-control" placeholder="Password"
                             onChange={e => setPassword(e.target.value)}
                             required />
                     <div className="checkbox mb-3">
