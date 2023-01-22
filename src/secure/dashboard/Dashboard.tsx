@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
       setRoleCount(res.data.roles);
       setOrderCount(res.data.orders)
     })
-  },[])
+  },[userCount,productCount,orderCount,roleCount])
 
     return (
     <Wrapper>
@@ -64,7 +64,7 @@ const Dashboard: React.FC = () => {
               }}
             >
               <h3>Total Products</h3>
-              <h2>{productCount?productCount:"..."}</h2>
+              <h2>{productCount ? productCount : "..."}</h2>
             </div>
             <div  
                style={{
@@ -91,12 +91,12 @@ const Dashboard: React.FC = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 border: "solid 1px #ddd",
-                background:"#439A97",
+                background:"#FD91A8",
                 borderRadius: "10px",
                 zIndex:'11',
                 width:"300px",
                 height:"180px",
-                color:"#fff!important"
+                color:"#fff"
               }}
               
             >

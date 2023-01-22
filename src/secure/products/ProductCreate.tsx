@@ -81,7 +81,9 @@ const ProductCreate = ()=> {
                         
 
                         <div>
-                            <button className='btn btn-primary' type='submit'>Submit</button>
+                            <button
+                             disabled={image == null || image ==''}
+                             className='btn btn-primary' type='submit'>Submit</button>
                         </div>
                     </form>
                 </div>
