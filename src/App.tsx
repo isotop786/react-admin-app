@@ -10,6 +10,7 @@ import RedirectToDashboard from './secure/RedirectToDashboard';
 import { UserEdit,UserCreate, Users } from './secure/users';
 import Roles from './secure/roles/Roles';
 import Orders from './secure/orders/Orders';
+import OrderItems from './secure/orders/OrderItems';
 import Products from './secure/products/Products';
 import ProductCreate from './secure/products/ProductCreate';
 import ProductEdit from './secure/products/ProductEdit';
@@ -25,6 +26,7 @@ function App() {
         <Route path="/users/:id/edit" element={<UserEdit/>}  />
         <Route path="/roles" element={<Roles/>}  />
         <Route path="/orders" element={<Orders/>}  />
+        <Route path="/orders/:id/details" element={<OrderItems/>}  />
         <Route path="/products" element={<Products/>}  />
         <Route path="/products/create" element={<ProductCreate/>}  />
         <Route path="/products/:id/edit" element={<ProductEdit/>}  />

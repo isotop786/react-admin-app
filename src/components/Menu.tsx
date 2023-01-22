@@ -26,19 +26,18 @@ const Menu = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link className="nav-link" to="/roles">
-              <span data-feather="file"></span>
-              Roles
-            </Link>
-          </li>
-      
-          <li className="nav-item">
             <Link to="/orders" className="nav-link" >
               <span data-feather="file"></span>
               Orders
             </Link>
           </li>
          
+          <li className="nav-item">
+            <Link className="nav-link" to="/roles">
+              <span data-feather="file"></span>
+              Roles
+            </Link>
+          </li>
          
         </ul>
       </div>

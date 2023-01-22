@@ -13,7 +13,7 @@ const Orders= () => {
         const fetchOrders = () => {
             axios.get(`/orders`)
                 .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                   setOrders(res.data.data)
                   // setLastPage(res.data.meta?.last_page)
                 })
@@ -26,14 +26,6 @@ const Orders= () => {
         
     },[orders])
 
-    const deletHandler = async (id: any)=>{
-      if(window.confirm('Are you sure to delete?'))
-      {
-        await axios.delete(`/orders/${id}`)
-        const newOrder = orders.filter((order: Order) => order.id !== id)
-        setOrders(newOrder)
-      }
-    }
 
     return (
       <Wrapper>
@@ -64,7 +56,7 @@ const Orders= () => {
                     <td>{order.last_name}</td>
                     <td>{order.email}</td>
                     <td>{order.total}</td>
-                    <td><Link  to={`/orders/${order.id}/edit`} className="btn btn-sm btn-warning">
+                    <td><Link  to={`/orders/${order.id}/details`} className="btn btn-sm btn-warning">
                         View
                       </Link>
                     </td>
