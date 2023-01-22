@@ -9,6 +9,8 @@ import Register from './public/Register';
 import RedirectToDashboard from './secure/RedirectToDashboard';
 import { UserEdit,UserCreate, Users } from './secure/users';
 import Roles from './secure/roles/Roles';
+import Order from './secure/orders/Order';
+import Products from './secure/products/Products';
 function App() {
   return (
 <div className='App'>
@@ -18,8 +20,10 @@ function App() {
         <Route path="/dashboard" element={<Dashboard/>}  />
         <Route path="/users" element={<Users/>}  />
         <Route path="/users/create" element={<UserCreate/>}  />
-        <Route path="/roles" element={<Roles/>}  />
         <Route path="/users/:id/edit" element={<UserEdit/>}  />
+        <Route path="/roles" element={<Roles/>}  />
+        <Route path="/orders" element={<Order/>}  />
+        <Route path="/products" element={<Products/>}  />
         <Route path="/login" element={<Login/>}  />
         <Route path="/register" element={<Register/>}  />
       </Routes>
