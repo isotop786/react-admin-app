@@ -11,6 +11,8 @@ import { UserEdit,UserCreate, Users } from './secure/users';
 import Roles from './secure/roles/Roles';
 import Order from './secure/orders/Order';
 import Products from './secure/products/Products';
+import ProductCreate from './secure/products/ProductCreate';
+import ProductEdit from './secure/products/ProductEdit';
 function App() {
   return (
 <div className='App'>
@@ -24,6 +26,8 @@ function App() {
         <Route path="/roles" element={<Roles/>}  />
         <Route path="/orders" element={<Order/>}  />
         <Route path="/products" element={<Products/>}  />
+        <Route path="/products/create" element={<ProductCreate/>}  />
+        <Route path="/products/:id/edit" element={<ProductEdit/>}  />
         <Route path="/login" element={<Login/>}  />
         <Route path="/register" element={<Register/>}  />
       </Routes>

@@ -51,9 +51,9 @@ const Products: React.FC = () => {
               <thead>
                 <tr>
                   <th>id</th>
+                  <th>Image</th>
                   <th>Title</th>
                   <th>Description</th>
-                  <th>Image</th>
                   <th>Price</th>
                   <th>Actions</th>
             
@@ -64,11 +64,11 @@ const Products: React.FC = () => {
                 {products?.map((product: Product) => {
                   return (<tr key={product.id}>
                     <td>{product.id}</td>
+                    <td><img height="50px" width={100} src={product.image} className="img-thumbnail"/></td>
                     <td>{product.title}</td>
                     <td>{product.description}</td>
-                    <td>{product.image}</td>
                     <td>{product.price}</td>
-                    <td><Link  to={`/users/${product.id}/edit`} className="btn btn-sm btn-warning">
+                    <td><Link  to={`/products/${product.id}/edit`} className="btn btn-sm btn-warning">
                         Update
                       </Link></td>
                     <td><button  onClick={()=>deletProductHandler(product.id)} className="btn btn-sm btn-danger">Delete</button></td>
