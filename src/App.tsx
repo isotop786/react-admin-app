@@ -9,7 +9,7 @@ import Register from './public/Register';
 import RedirectToDashboard from './secure/RedirectToDashboard';
 import { UserEdit,UserCreate, Users } from './secure/users';
 import Roles from './secure/roles/Roles';
-import Order from './secure/orders/Order';
+import Orders from './secure/orders/Orders';
 import Products from './secure/products/Products';
 import ProductCreate from './secure/products/ProductCreate';
 import ProductEdit from './secure/products/ProductEdit';
@@ -24,7 +24,7 @@ function App() {
         <Route path="/users/create" element={<UserCreate/>}  />
         <Route path="/users/:id/edit" element={<UserEdit/>}  />
         <Route path="/roles" element={<Roles/>}  />
-        <Route path="/orders" element={<Order/>}  />
+        <Route path="/orders" element={<Orders/>}  />
         <Route path="/products" element={<Products/>}  />
         <Route path="/products/create" element={<ProductCreate/>}  />
         <Route path="/products/:id/edit" element={<ProductEdit/>}  />

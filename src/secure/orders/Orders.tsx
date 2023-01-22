@@ -1,20 +1,20 @@
 import React,{useState, useEffect} from "react";
 import Wrapper from "../Wrapper";
 import axios from "axios";
-import { User } from '../../models/User'
-import { Role } from "../../models/Role";
+import { Order } from "../../models/Order.model";
+import { OrderItem } from "../../models/OrderItem.models";
 import { Link } from "react-router-dom";
 
-const Order: React.FC = () => {
-  const [users, setUsers] = useState([]);
+const Orders= () => {
+  const [orders, setOrders] = useState([]);
   const [page, setPage] = useState(1);
   const [lastPage,setLastPage] = useState(0)
     useEffect(() => {
-        const fetchUsers = () => {
-            axios.get(`users?page=${page}`)
+        const fetchOrders = () => {
+            axios.get(`/orders`)
                 .then(res => {
                 console.log(res.data)
-                  setUsers(res.data.results)
+                  setOrders(res.data.data)
                   // setLastPage(res.data.meta?.last_page)
                 })
                 .catch(err => console.log(err))
@@ -22,16 +22,16 @@ const Order: React.FC = () => {
             // console.log(lastPage)
         }
 
-        fetchUsers();
+        fetchOrders();
         
-    },[page,users])
+    },[orders])
 
-    const deletUserHandler = async (id: any)=>{
+    const deletHandler = async (id: any)=>{
       if(window.confirm('Are you sure to delete?'))
       {
-        await axios.delete(`/users/${id}`)
-        const newUsers = users.filter((u: User) => u.id !== id)
-        setUsers(newUsers)
+        await axios.delete(`/orders/${id}`)
+        const newOrder = orders.filter((order: Order) => order.id !== id)
+        setOrders(newOrder)
       }
     }
 
@@ -39,12 +39,8 @@ const Order: React.FC = () => {
       <Wrapper>
       
             <h2>All Orders</h2>
-            {/* <div className="d-flex justify-content-between flex-wrap flex-md-nowrap pt-3 pb-2 mb-3">
-                <div className="btn-toolbar mb-2 mb-md-0">
-                    <Link to="/users/create" className="btn btn-sm btn-outline-secondary">Add</Link>
-                </div>
-        </div> */}
-        {users.length == 0 ? (<div className="my-2"><h4>Order data loading...</h4></div>) : (
+
+        {orders.length == 0 ? (<div className="my-2"><h4>Order data loading...</h4></div>) : (
      <div>
           <div className="table-responsive">
             <table className="table table-striped table-sm">
@@ -54,24 +50,25 @@ const Order: React.FC = () => {
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Email</th>
-                  <th>Role</th>
+                  <th>Total</th>
                   <th>Actions</th>
             
                 </tr>
               </thead>
               <tbody>
               
-                {users?.map((user: User) => {
-                  return (<tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.first_name}</td>
-                    <td>{user.last_name}</td>
-                    <td>{user.email}</td>
-                    <td>{user.role?.name}</td>
-                    <td><Link  to={user.email !=="admin@admin.com" ? `/users/${user.id}/edit` : `#`} className="btn btn-sm btn-warning">
-                        Update
-                      </Link></td>
-                    <td><button disabled={user.email =="admin@admin.com"} onClick={()=>deletUserHandler(user.id)} className="btn btn-sm btn-danger">Delete</button></td>
+                {orders?.map((order: Order) => {
+                  return (<tr key={order.id}>
+                    <td>{order.id}</td>
+                    <td>{order.first_name}</td>
+                    <td>{order.last_name}</td>
+                    <td>{order.email}</td>
+                    <td>{order.total}</td>
+                    <td><Link  to={`/orders/${order.id}/edit`} className="btn btn-sm btn-warning">
+                        View
+                      </Link>
+                    </td>
+                    
                   </tr>)
                 })}
            
@@ -101,4 +98,4 @@ const Order: React.FC = () => {
     )
 }
 
-export default Order;
+export default Orders;
