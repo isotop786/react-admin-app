@@ -24,7 +24,7 @@ const Orders= () => {
 
         fetchOrders();
         
-    },[orders])
+    },[])
 
 
     return (

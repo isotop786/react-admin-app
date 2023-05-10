@@ -14,6 +14,7 @@ import OrderItems from './secure/orders/OrderItems';
 import Products from './secure/products/Products';
 import ProductCreate from './secure/products/ProductCreate';
 import ProductEdit from './secure/products/ProductEdit';
+import Profile from './secure/profile/Profile';
 function App() {
   return (
 <div className='App'>
@@ -32,6 +33,7 @@ function App() {
         <Route path="/products/:id/edit" element={<ProductEdit/>}  />
         <Route path="/login" element={<Login/>}  />
         <Route path="/register" element={<Register/>}  />
+        <Route path="/profile" element={<Profile/>}  />
       </Routes>
      {/* Routes ends here */}
 

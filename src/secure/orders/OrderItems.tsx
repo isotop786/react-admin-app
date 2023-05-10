@@ -24,7 +24,7 @@ const OrderItems= () => {
 
         fetchItems();
         
-    },[orderItems])
+    },[])
 
 
     return (

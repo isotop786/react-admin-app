@@ -10,7 +10,8 @@ import axios from 'axios';
 import { Provider } from 'react-redux';
 import store from './redux/store'
 
-axios.defaults.baseURL = '/api';
+// axios.defaults.baseURL = '/api';
+axios.defaults.baseURL = 'https://django-admin-app.herokuapp.com/api/';
 // axios.defaults.baseURL = 'http://127.0.0.1:8000/api/';
 // axios.defaults.baseURL = 'http://165.227.33.145:7009/api/';
 // axios.defaults.baseURL = 'http://165.227.33.145/api/';

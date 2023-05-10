@@ -19,7 +19,7 @@ class Wrapper extends Component<PropsWithChildren> {
     componentDidMount =  () => {
         axios.get('user')
             .then(res => {
-                
+                localStorage.setItem('userinfo',JSON.stringify(res.data.data))
             })
             .catch(err => {
                 this.setState({redirect: true})
